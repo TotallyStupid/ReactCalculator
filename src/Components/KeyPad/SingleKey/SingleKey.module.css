@@ -1,0 +1,11 @@
+.NumberKey {
+    border: solid #ccc;
+    border-width: 0 1px 1px 0;
+    background-color: #fff;
+    outline: none;
+    color: #999;
+    font-weight: bold;
+    cursor: pointer;
+    width: 25%;
+    font-size: 100px;
+}
