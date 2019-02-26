@@ -3,24 +3,32 @@ import React from 'react';
 import SingleKey from './SingleKey/SingleKey';
 import classes from './KeyPad.module.css';
 
+const keys = [
+    { label: 7, value: 7 },
+    { label: 8, value: 8 },
+    { label: 9, value: 9 },
+    { label: '+', value: '+' },
+    { label: 4, value: 4 },
+    { label: 5, value: 5 },
+    { label: 6, value: 6 },
+    { label: '-', value: '-' },
+    { label: 1, value: 1 },
+    { label: 2, value: 2 },
+    { label: 3, value: 3 },
+    { label: 'x', value: '*' },
+    { label: '.', value: '.' },
+    { label: 0, value: 0 },
+    { label: '=', value: '=' },
+    { label: '/', value: '/' }
+]
+
 const keyPad = (props) => (
     <div className={classes.KeyPad}>
-        <SingleKey clicked={() => props.clicked(7)}>7</SingleKey>
-        <SingleKey clicked={() => props.clicked(8)}>8</SingleKey>
-        <SingleKey clicked={() => props.clicked(9)}>9</SingleKey>
-        <SingleKey clicked={() => props.clicked("+")}>+</SingleKey>
-        <SingleKey clicked={() => props.clicked(4)}>4</SingleKey>
-        <SingleKey clicked={() => props.clicked(5)}>5</SingleKey>
-        <SingleKey clicked={() => props.clicked(6)}>6</SingleKey>
-        <SingleKey clicked={() => props.clicked('-')}>-</SingleKey>
-        <SingleKey clicked={() => props.clicked(1)}>1</SingleKey>
-        <SingleKey clicked={() => props.clicked(2)}>2</SingleKey>
-        <SingleKey clicked={() => props.clicked(3)}>3</SingleKey>
-        <SingleKey clicked={() => props.clicked('*')}>x</SingleKey>
-        <SingleKey clicked={() => props.clicked(".")}>.</SingleKey>
-        <SingleKey clicked={() => props.clicked(0)}>0</SingleKey>
-        <SingleKey clicked={() => props.clicked("=")}>=</SingleKey>
-        <SingleKey clicked={() => props.clicked('/')}>/</SingleKey>
+        {keys.map(key => (
+            <SingleKey 
+                key={key.value}
+                clicked={() => props.clicked(key.value)}>{key.label}</SingleKey>
+        ))}
     </div>
 );
 
